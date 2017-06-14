@@ -1,9 +1,8 @@
 # Sink
 
 
-## http <span style="color:blue">*sink*</span> 
+## http _(sink)_
 
-<span style="color:blue">some *This is Blue italic.* text</span>
 
 ### Description
 
