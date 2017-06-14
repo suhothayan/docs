@@ -1,7 +1,9 @@
 # Sink
 
 
-## http _(sink)_
+## http <span style="color:blue">*sink*</span> 
+
+<span style="color:blue">some *This is Blue italic.* text</span>
 
 ### Description
 
@@ -33,33 +35,33 @@ number of headers for each event dynamically.
 @sink(type='http',publisher.url='http://localhost:8009', method='{{method}}',headers='{{headers}}', @map(type='xml' , @payload('{{payloadBody}}')))
 define stream FooStream (payloadBody String, method string, headers string);
 ```
-Expected input should be in following format:{<events>
+Expected input should be in following format:
+```
+{<events>
     <event>
-   
-<symbol>WSO2</symbol>
+        <symbol>WSO2</symbol>
         <price>55.6</price>
-       
-<volume>100</volume>
-   
-</event>
+        <volume>100</volume>
+   </event>
 </events>
-,POSTContent-Length:24#Content-Location:USA#Retry-After:120}Above
-configuration will do a default XML input mapping which will generate as below
-~Output payload<events>
-    <event>
-       
-<symbol>WSO2</symbol>
+
+,POSTContent-Length:24#Content-Location:USA#Retry-After:120}
+```
+Above configuration will do a default XML input mapping which will generate as below
+Output payload
+```
+<events>
+    <event>   
+        <symbol>WSO2</symbol>
         <price>55.6</price>
-       
-<volume>100</volume>
+        <volume>100</volume>
     </event>
 </events>
-~Output
-headersContent-Length:24,Content-Location:USA,Retry-After:120,Content-Type:application/xml~Output
-propertyHTTP_METHOD:POST If you need to use basic authentication, the
+```
+If you need to use basic authentication, the
 basic.auth.enabled parameter must be set to true. This would also require
 values to be specified for the basic.auth.username and basic.auth.password
-parameters (e.g., basic.auth.username='userName' and
-basic.auth.password='passWord'). As a result,the output will also contain the
+parameters (e.g., `basic.auth.username='userName'` and
+`basic.auth.password='passWord'`). As a result,the output will also contain the
 Authorization header."
 
