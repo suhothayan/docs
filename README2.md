@@ -15,7 +15,7 @@ number of headers for each event dynamically.
 @sink(type="http", publisher.url="<STRING>", basic.auth.username="<STRING>", basic.auth.password="<STRING>", client.truststore.path="<STRING>", client.truststore.pass="<STRING>", @map(type='type', @payload('{{payloadBody}}')))
 ```
 
-#### Parameters
+### Query Parameters
 
 |Name	|Description| Default Value| Possible Parameters|
 |-------|-----------|--------------|--------------------|
