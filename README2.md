@@ -3,9 +3,6 @@
 
 ## http _(sink)_
 
-
-### Description
-
 This extension publish the http events in any method types such as POST, GET, PUT, DELETE  via http or https
 protocols. As the additional features this component can provide basic
 authentication as well as user can publish events using custom client truststore
@@ -17,6 +14,17 @@ number of headers for each event dynamically.
 ```
 @sink(type="http", publisher.url="<STRING>", basic.auth.username="<STRING>", basic.auth.password="<STRING>", client.truststore.path="<STRING>", client.truststore.pass="<STRING>", @map(type='type', @payload('{{payloadBody}}')))
 ```
+
+#### Parameters
+
+|Name	|Description| Default Value| Possible Parameters|
+|-------|-----------|--------------|--------------------|
+|latency.metrics.enabled|Netty transportation property.|true|N/A|
+|server.bootstrap.socket.timeout|Netty transportation property.|15|N/A|
+|client.bootstrap.socket.timeout|Netty transportation property.|15|N/A|
+|default.host|The default host.|0.0.0.0|N/A|
+|https.truststore.file|The default truststore file path.|`${carbon.home}/conf/security/client-truststore.jks`|N/A|
+
 ### System Parameters
 
 |Name	|Description| Default Value| Possible Parameters|
